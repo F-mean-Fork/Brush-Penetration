@@ -1,0 +1,44 @@
+lat : name : gradients : 1 
+lat : name : geometry : flat 
+lat : name : n_layers : 110 
+lat : name : lambda : 0.16666666666666666667 
+lat : name : latticetype : standard 
+lat : name : bondlength : 3.1e-10 
+lat : name : lowerbound : surface 
+mon : lower : freedom : frozen 
+mon : lower : frozen_range : lowerbound 
+lat : name : upperbound : surface 
+mon : upper : freedom : frozen 
+mon : upper : frozen_range : upperbound 
+sys : name : temperature : 298.15 
+mon : X1 : freedom : pinned 
+mon : X1 : pinned_range : 1 
+mon : A1 : freedom : free 
+mon : X2 : freedom : pinned 
+mon : X2 : pinned_range : 110 
+mon : A2 : freedom : free 
+mon : G1 : freedom : free 
+mon : G2 : freedom : free 
+mon : W : freedom : free 
+mon : X1 : chi - W : 0.6 
+mon : A1 : chi - W : 0.6 
+mon : X2 : chi - W : 0.6 
+mon : A2 : chi - W : 0.6 
+mol : Water : freedom : solvent 
+mol : Water : composition : (W)1 
+mol : pol1 : freedom : restricted 
+mol : pol1 : composition : (X1)1((A1)10)99(A1)9(G1)1 
+mol : pol1 : theta : 10.01 
+mol : pol2 : freedom : restricted 
+mol : pol2 : composition : (X2)1((A2)10)99(A2)9(G2)1 
+mol : pol2 : theta : 10.01 
+newton : isaac : method : pseudohessian 
+newton : isaac : tolerance : 1e-07 
+newton : isaac : iterationlimit : 10000000 
+newton : isaac : deltamax : 0.5 
+output : filename.pro : type : profiles 
+output : filename.pro : template : profile.tmp 
+output : filename.kal : type : kal 
+output : filename.kal : template : kal.tmp 
+sys : name : overflow_protection : true
+start
